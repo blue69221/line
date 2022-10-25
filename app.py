@@ -47,11 +47,18 @@ def handle_message(event):
     elif msg == '你是誰':
         r = '我是機器人'
     elif '訂位' in msg:
-        r = '您想訂位，是嗎'
+        r = '您想訂位，是嗎?'
+
+    # line_bot_api.reply_message(
+    #     event.reply_token,
+    #     TextSendMessage(text=r))
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=r))
+         StickerSendMessage(
+            package_id='1', 
+            sticker_id='1'
+))
 
 
 if __name__ == "__main__":
